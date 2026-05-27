@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compendio de Física: MVCL, Newton, DCL y Estática</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #0284c7;
+            --bg: #f8fafc;
+            --text: #334155;
+            --card-bg: #ffffff;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+        header h1 { margin: 0; font-size: 2.2rem; }
+        header p { margin: 0.5rem 0 0 0; opacity: 0.9; font-size: 1.1rem; }
+        nav {
+            background: #0f172a;
+            padding: 0.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        nav a:hover { color: white; background: #1e293b; }
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.06);
+        }
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        h3 { color: var(--secondary); margin-top: 1.5rem; }
+        .formula-box {
+            background: #f1f5f9;
+            border-left: 4px solid var(--secondary);
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        th, td {
+            text-align: left;
+            padding: 0.75rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th { background-color: #f8fafc; color: var(--primary); }
+        tr:hover { background-color: #f1f5f9; }
+        .badge {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .proposicion {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #64748b;
+            font-size: 0.9rem;
+            background: #f1f5f9;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Compendio Académico de Física</h1>
+        <p>Material de Apoyo: MVCL, Leyes de Newton, DCL y Estática I</p>
+    </header>
+
+    <nav>
+        <a href="#cap13">Cap. 13: MVCL II</a>
+        <a href="#cap14">Cap. 14: Leyes de Newton</a>
+        <a href="#cap15">Cap. 15: Fuerzas y DCL</a>
+        <a href="#cap16">Cap. 16: Estática I</a>
+    </nav>
+
+    <main>
+        <section id="cap13">
+            <h2>CAPÍTULO 13 — Movimiento Vertical de Caída Libre II (MVCL)</h2>
+            <div class="formula-box">
+                Fórmulas Fundamentales:<br>
+                • v_f = v₀ ± g·t <br>
+                • h = ((v₀ + v_f)/2)·t <br>
+                • h = v₀·t ± ½·g·t² <br>
+                Nota: (+) cuando baja, (−) cuando sube. (Considerar g = 10 m/s² por defecto)
+            </div>
+
+            <h3>Ejercicios Resueltos</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sección / Ejercicio</th>
+                        <th>Enunciado y Desarrollo</th>
+                        <th>Resultado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="badge">Aplico pág. 212</span><br>Ejercicio 1</td>
+                        <td>Esfera se suelta desde azotea (v₀=0), llega en t = 3 s.<br>h = v₀·t + ½·g·t² = 0 + ½(10)(3)² = 5·9</td>
+                        <td><strong>h = 45 m</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge">Aplico pág. 212</span><br>Ejercicio 2</td>
+                        <td>Pelota lanzada sube. v₀ = 40 m/s, v_f = 10 m/s.<br>t: 10 = 40 − 10·t → t = 3 s.<br>h = ((40 + 10)/2)·3 = 25·3</td>
+                        <td><strong>h = 75 m</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge">Demuestro pág. 213</span><br>Ejercicio 3</td>
+                        <td>Piedra en caída, v₀ = 5 m/s, v_f = 45 m/s.<br>t: 45 = 5 + 10·t → t = 4 s.<br>h = ((5 + 45)/2)·4 = 25·4</td>
+                        <td><strong>h = 100 m</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge">Demuestro pág. 213</span><br>Ejercicio 4</td>
+                        <td>Lanzamiento vertical hacia arriba, v = 80 m/s. Altura máxima (v_f = 0).<br>t: 0 = 80 − 10·t → t = 8 s.<br>h = ((80 + 0)/2)·8 = 40·8</td>
+                        <td><strong>h = 320 m</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge">Demuestro pág. 213</span><br>Ejercicio 5</td>
+                        <td>Canica regresa en 6 s (t_sube = 3 s, v_f = 0).<br>v₀ = g·t = 10·3 = 30 m/s.<br>h = ((30 + 0)/2)·3 = 15·3</td>
+                        <td><strong>h = 45 m</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge">Reto pág. 213</span><br>Ejercicio 6</td>
+                        <td>Piedra cae desde azotea, tarda 6 s (v₀ = 0).<br>h = 0 + ½·(10)·(6)² = 5·36</td>
+                        <td><strong>h = 180 m</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge">Pág. 214</span><br>Ejercicio 7</td>
+                        <td>Llaves caen desde h = 5 m (v₀ = 0).<br>5 = ½·(10)·t² → 5 = 5·t² → t² = 1</td>
+                        <td><strong>t = 1 s</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge">Aplico II pág. 214</span><br>Ejercicio 1</td>
+                        <td>Esfera cae desde azotea, llega en 3 s.<br>h = ½·(10)·9</td>
+                        <td><strong>h = 45 m</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge">Aplico II pág. 214</span><br>Ejercicio 2</td>
+                        <td>Lanzada desde el piso, v₀ = 50 m/s, v_f = 30 m/s.<br>t: 30 = 50 − 10·t → t = 2 s.<br>h = ((50 + 30)/2)·2</td>
+                        <td><strong>h = 80 m</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge">Demuestro II pág. 215</span><br>Ejercicio 3</td>
+                        <td>Caída libre, v₀ = 15 m/s, v_f = 35 m/s.<br>t: 35 = 15 + 10·t → t = 2 s.<br>h = ((15 + 35)/2)·2</td>
+                        <td><strong>h = 50 m</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge">Demuestro II pág. 215</span><br>Ejercicio 4</td>
+                        <td>Lanzada hacia arriba, v = 20 m/s. Altura máxima (v_f = 0).<br>t = 20/10 = 2 s.<br>h = ((20 + 0)/2)·2</td>
+                        <td><strong>h = 20 m</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge">Demuestro II pág. 215</span><br>Ejercicio 5</td>
+                        <td>Canica regresa en 8 s (t_sube = 4 s).<br>v₀ = 10·4 = 40 m/s.<br>h = ((40 + 0)/2)·4</td>
+                        <td><strong>h = 80 m</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge">Reto Galileo pág. 215</span><br>Ejercicio 6</td>
+                        <td>Cuerpo cae en 3 s (v₀ = 0).<br>h = ½·(10)·(3)² = 5·9</td>
+                        <td><strong>h = 45 m</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge">Pág. 215</span><br>Ejercicio 7</td>
+                        <td>Hombre se lanza de edificio, h = 21 m.<br>21 = ½·(10)·t² → 21 = 5·t² → t² = 4,2</td>
+                        <td><strong>t ≈ 2,05 s</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge">Finales pág. 216</span><br>Ejercicio 1</td>
+                        <td>Luego de 4 s está a 100 m. Hallar v₀.<br>100 = v₀·(4) − ½·(10)·(4)² → 100 = 4v₀ − 80 → 4v₀ = 180</td>
+                        <td><strong>v₀ = 45 m/s</strong> (Rpta: B)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="badge">Finales pág. 216</span><br>Ejercicio 2</td>
+                        <td>Desde azotea hacia arriba v₀ = 20 m/s. Impacta en 7 s.<br>Tomando ref. hacia abajo: h = ½·g·t² − v₀·t = ½(10)(49) − 20(7) = 245 − 140</td>
+                        <td><strong>h = 105 m</strong> (Rpta: D)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Ejercicios por Niveles (págs. 217-218)</h3>
+            <table>
+                <thead>
+                    <tr><th>Nivel / Ejercicio</th><th>Desarrollo</th><th>Resultado</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Nivel I — Ej. 1</td><td>Cae libre, llega en 5 s. h = ½·(10)·25</td><td><strong>125 m</strong></td></tr>
+                    <tr><td>Nivel I — Ej. 2</td><td>v₀ = 35 m/s, v_f = 5 m/s. t = (35-5)/10 = 3 s. h = ((35+5)/2)·3</td><td><strong>60 m</strong></td></tr>
+                    <tr><td>Nivel II — Ej. 3</td><td>Regresa en 6 s (t_sube = 3 s → v₀ = 30 m/s). h = ((30+0)/2)·3</td><td><strong>45 m</strong></td></tr>
+                    <tr><td>Nivel II — Ej. 4</td><td>Se suelta, h = 80 m. 80 = ½·(10)·t² → t² = 16</td><td><strong>4 s</strong></td></tr>
+                    <tr><td>Nivel III — Ej. 5</td><td>v₀ = 10 m/s. En t=1s, v₁=20 m/s. Siguiente segundo: h = 20(1) + ½(10)(1)²</td><td><strong>25 m</strong></td></tr>
+                    <tr><td>Nivel I — Ej. 1 (p. 218)</td><td>Cae libre, tarda 4 s. h = ½·(10)·16</td><td><strong>80 m</strong> (Rpta: D)</td></tr>
+                    <tr><td>Nivel II — Ej. 2</td><td>v₁ = 0, v₂ = 20 m/s. t = 2 s. h = ((0+20)/2)·2</td><td><strong>20 m</strong> (Rpta: D)</td></tr>
+                    <tr><td>Nivel II — Ej. 3</td><td>v₀ = 35 m/s, v_f = 5 m/s. t = 3 s. h = ((35+5)/2)·3</td><td><strong>25 m</strong> (Rpta: A)</td></tr>
+                    <tr><td>Nivel III — Ej. 4</td><td>v₀ = 6 m/s. t=1: v₁=16 m/s. h en seg. intervalo = 16(1) + ½(10)(1)² = 21 m. (Nota: Análisis de alternativas da inconsistencia gráfica estándar).</td><td><strong>21 m</strong></td></tr>
+                    <tr><td>Nivel III — Ej. 5</td><td>Edificio h = 21 m. Menos 1m horizontal = 20 m netos. v_f² = 2·g·h = 2(10)(20) = 400</td><td><strong>20 m/s</strong> (Rpta: B)</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="cap14">
+            <h2>CAPÍTULO 14 — LEYES DE NEWTON</h2>
+            
+            <h3>Conceptos Clave</h3>
+            <div class="proposicion">
+                <strong>Primera Ley de Newton (Inercia):</strong> Todo cuerpo persevera en su estado de reposo o MRU a no ser que sea obligado a cambiar su estado por fuerzas externas impresas sobre él.
+            </div>
+            <div class="proposicion">
+                <strong>Tercera Ley de Newton (Acción y Reacción):</strong> A toda acción se opone siempre una reacción igual y contraria. Tienen igual módulo, direcciones opuestas y actúan sobre cuerpos diferentes.
+            </div>
+            <div class="proposicion">
+                <strong>Medición de la Inercia:</strong> La magnitud física cuantitativa que mide la inercia de un cuerpo es su <strong>masa</strong> (expresada en kg), no su peso.
+            </div>
+
+            <h3>Resolución de Cuestionarios y Ejercicios</h3>
+            <table>
+                <thead>
+                    <tr><th>Sección / Ej.</th><th>Pregunta / Caso</th><th>Respuesta Correcta</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Aplico p. 222 - Ej. 2</td><td>Movimiento por inercia puro sin fuerzas.</td><td>Trayectoria rectilínea (MRU).</td></tr>
+                    <tr><td>Aplico p. 222 - Ej. 5</td><td>Gráfico de jugador lanzando pelota.</td><td>Tercera Ley de Newton (Acción/Reacción).</td></tr>
+                    <tr><td>Demuestro p. 222 - Ej. 3</td><td>Conductor sale disparado hacia adelante en un frenazo.</td><td>Primera Ley (Inercia): el cuerpo tiende a mantener su velocidad.</td></tr>
+                    <tr><td>Demuestro p. 222 - Ej. 5</td><td>DCL joven-tronco (el joven empuja el tronco).</td><td>Fuerzas iguales en módulo, opuestas en dirección.</td></tr>
+                    <tr><td>Asumo mi reto p. 224 - Ej. 6</td><td>Cohete expulsando gases para elevarse.</td><td>Tercera Ley de Newton.</td></tr>
+                    <tr><td>Pág. 225 - Ej. 7</td><td>Se jala el mantel violentamente y la botella no cae.</td><td><strong>C) La botella no se cae por su inercia.</strong></td></tr>
+                    <tr><td>Finales p. 225 - Ej. 1</td><td>Al golpear un clavo con un martillo...</td><td><strong>D) ejerce otra fuerza de igual magnitud y opuesta sobre el martillo.</strong></td></tr>
+                    <tr><td>Finales p. 225 - Ej. 2</td><td>Proposición incorrecta detectada.</td><td><strong>A) Las leyes de Newton no son universales.</strong> (Falso, sí lo son).</td></tr>
+                    <tr><td>Nivel I p. 226 - Ej. 2</td><td>Cohete expulsa gases, módulo de acción = 50 N.</td><td>Reacción = <strong>50 N</strong>.</td></tr>
+                    <tr><td>Nivel II p. 226 - Ej. 3</td><td>La Tierra atrae a una paloma con 12 N.</td><td>La paloma atrae a la Tierra con <strong>12 N</strong>.</td></tr>
+                    <tr><td>Nivel III p. 226 - Ej. 5</td><td>Cantidad física que mide la inercia.</td><td>La masa.</td></tr>
+                    <tr><td>Pág. 227 - Ej. 5</td><td>Marcar la proposición incorrecta.</td><td><strong>D) El peso es la medida de la inercia de los cuerpos.</strong> (Es la masa).</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="cap15">
+            <h2>CAPÍTULO 16 — FUERZAS Y DIAGRAMA DE CUERPO LIBRE (DCL)</h2>
+            <p>El DCL consiste en aislar un cuerpo y graficar todas las fuerzas externas que actúan sobre él (Gravedad, Tensiones, Normales, Elásticas, etc.)</p>
+
+            <h3>Respuestas Teóricas (pág. 228)</h3>
+            <ol>
+                <li>El centro de gravedad de las personas se ubica comúnmente cerca del <strong>ombligo</strong>.</li>
+                <li>La fuerza de gravedad actúa vectorialmente directo en el <strong>centro de gravedad (CG)</strong> del cuerpo.</li>
+            </ol>
+
+            <h3>Guía de Resultados de DCL</h3>
+            <table>
+                <thead>
+                    <tr><th>Ejercicio</th><th>Sistema Analizado</th><th>Fuerzas Componentes del DCL</th><th>Clave</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Ej. 1 (p. 232)</td><td>Esfera colgada de una cuerda</td><td>Tensión T (↑), Fuerza de gravedad Fg (↓)</td><td><strong>Rpta: C</strong></td></tr>
+                    <tr><td>Ej. 2 (p. 232)</td><td>Barra apoyada en pared y suelo</td><td>Tensión T (↑), Normal lateral F_N (←), Gravedad Fg (↓)</td><td>Configuración Estándar</td></tr>
+                    <tr><td>Ej. 3 (p. 232)</td><td>Bloque en rampa lisa con resorte</td><td>Fuerza elástica F_E (rampa arriba), Gravedad Fg (↓), Normal F_N (⊥ rampa)</td><td><strong>Rpta: D</strong></td></tr>
+                    <tr><td>Aplico 1 (p. 234)</td><td>Barra horizontal con 2 cuerdas</td><td>Tensión T₁ (↑ izq), Tensión T₂ (↑ der), Gravedad Fg (↓)</td><td>-</td></tr>
+                    <tr><td>Aplico 2 (p. 234)</td><td>Bloque sobre resorte comprimido</td><td>Gravedad Fg (↓), Fuerza elástica F_E (↑), Normal del suelo F_N (↑)</td><td>-</td></tr>
+                    <tr><td>Asumo Reto 6 (p. 235)</td><td>Esfera entre dos planos lisos (esquina)</td><td>Normal 1 F_N1 (⊥ plano izq), Normal 2 F_N2 (⊥ plano der), Gravedad Fg (↓)</td><td>-</td></tr>
+                    <tr><td>Nivel I - Ej. 1 (p. 236)</td><td>Bloque con resorte estirado (colgando)</td><td>Fuerza elástica F_E (↑), Gravedad Fg (↓)</td><td><strong>Rpta: B</strong></td></tr>
+                    <tr><td>Nivel IV - Ej. 5 (p. 241)</td><td>Bloque con 2 resortes comprimidos y cuerda</td><td>Tensión T (↑), F_E₁ (↓), F_E₂ (↓), Gravedad Fg (↓)</td><td><strong>Rpta: C</strong></td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="cap16">
+            <h2>CAPÍTULO 16 — ESTÁTICA I (Primera Condición de Equilibrio)</h2>
+            <div class="formula-box">
+                Condición de Equilibrio Traslacional:<br>
+                ΣF(↑) = ΣF(↓) &nbsp;&nbsp;&nbsp;&nbsp; y &nbsp;&nbsp;&nbsp;&nbsp; ΣF(→) = ΣF(←)
+            </div>
+
+            <h3>Respuestas de Entrada (pág. 205)</h3>
+            <ul>
+                <li><strong>¿El peso puede cambiar?</strong> Sí, depende de la aceleración de la gravedad ($g$), la cual varía según la ubicación geográfica o el planeta (ej. en la Luna el peso es menor).</li>
+                <li><strong>¿Cómo es la masa en todas partes?</strong> La masa es una propiedad intrínseca, por lo tanto permanece <strong>constante</strong> en cualquier lugar del universo.</li>
+            </ul>
+
+            <h3>Resolución de Problemas Métricos de Poleas y Fuerzas</h3>
+            <table>
+                <thead>
+                    <tr><th>Sección / Ej.</th><th>Datos del Problema</th><th>Cálculos Fundamentales</th><th>Resultado Final</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pág. 209 - Ej. 4</td>
+                        <td>Bloque 20 kg, polea móvil ideal.</td>
+                        <td>Fg = 200 N. DCL Polea: 2T₁ = T₂.<br>T₂ soporta al bloque (200 N) → 2T₁ = 200</td>
+                        <td><strong>T₁ = 100 N</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Aplico p. 210 - Ej. 1</td>
+                        <td>Anillo, F₀(← y ↑), 45 N(→), 120 N(↓).</td>
+                        <td>ΣF(↑)=ΣF(↓) → F₀ = 120 N.<br>ΣF(→)=ΣF(←) → 45 + F = F₀ → 45 + F = 120</td>
+                        <td><strong>F = 75 N</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Demuestro p. 210 - Ej. 4</td>
+                        <td>Bloque 80 kg, 2 poleas móviles.</td>
+                        <td>Fg = 800 N. Cada polea móvil reduce el esfuerzo a la mitad.<br>Fórmula: 4·F = 800 N</td>
+                        <td><strong>F = 200 N</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Niveles p. 211 - Ej. 6</td>
+                        <td>Masa = 120 kg, 4 poleas móviles.</td>
+                        <td>Fg = 1200 N. El sistema cuenta con 8 segmentos de soporte.<br>8·F = 1200</td>
+                        <td><strong>F = 150 N</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Demuestro p. 212 - Ej. 3</td>
+                        <td>T₁ = 80 N en cuerda continua, polea móvil.</td>
+                        <td>T₂ = 2·T₁ = 160 N.<br>En equilibrio: Fg = T₂ = 160 N → m = 160/10</td>
+                        <td><strong>m = 16 kg</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Nivel I p. 214 - Ej. 1</td>
+                        <td>Bloque 50 kg (Fg=500N), F=100N, 2 poleas.</td>
+                        <td>3 segmentos tiran hacia arriba: 3 · 100 = 300 N.<br>Equilibrio con el suelo: 300 + F_N = 500</td>
+                        <td><strong>F_N = 200 N</strong> (Rpta: D)</td>
+                    </tr>
+                    <tr>
+                        <td>Nivel I p. 215 - Ej. 1</td>
+                        <td>Argolla. Fuerzas: 13N(←), 7N(←), 12N(→), F(→).</td>
+                        <td>ΣF(→) = ΣF(←) → 12 + F = 13 + 7 → 12 + F = 20</td>
+                        <td><strong>F = 8 N</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Nivel III p. 216 - Ej. 4</td>
+                        <td>Bloque en almacén, F = 20 N, 3 poleas totales.</td>
+                        <td>4 segmentos de cuerda cargan el bloque: 4 · 20 = 80 N.<br>Fg = 80 N → m = 80/10</td>
+                        <td><strong>m = 8 kg</strong> (Rpta: C)</td>
+                    </tr>
+                    <tr>
+                        <td>Reto p. 216 - Ej. 6</td>
+                        <td>Auto de 1600 kg (Fg = 16000 N), 3 poleas móviles.</td>
+                        <td>4 segmentos sostienen la carga estructural principal:<br>4·F = 16000 N</td>
+                        <td><strong>F = 4000 N</strong> (Rpta: B)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>Compendio Digitalizado de Física General © 2026. Optimizado para estudio y repaso permanente.</p>
+    </footer>
+
+</body>
+</html>
